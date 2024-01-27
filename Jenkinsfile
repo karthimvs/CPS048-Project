@@ -1,7 +1,4 @@
 pipeline {
-    agent {
-        label 'hdfc'
-    }
      stages {
         stage ('SCM Checkout') {
             steps {
