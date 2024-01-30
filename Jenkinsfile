@@ -36,6 +36,11 @@ pipeline {
                 sh 'sudo docker build -t cps048:v1 .'
             }
         }
+        stage ('Remove Existing Container') {
+            steps {
+                sh 'docker rm -f tomcate-cps048'
+            }
+        }
         stage('Docker Deployment'){
             steps {
                 sh 'sudo docker run -itd -p "7000:8080" --name tomcate-cps048 cps048:v1'
