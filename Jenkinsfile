@@ -38,7 +38,7 @@ pipeline {
         }
         stage ('Remove Existing Container') {
             steps {
-                sh 'docker rm -f tomcate-cps048'
+                sh 'sudo docker rm -f tomcate-cps048'
             }
         }
         stage('Docker Deployment'){
