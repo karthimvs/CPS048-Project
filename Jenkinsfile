@@ -22,7 +22,9 @@ pipeline {
                 script {
                     def mvnHome = tool name: 'maven3.9.6', type: 'maven'
                     withSonarQubeEnv('sonar') {
-                        sh "${mvnHome}/bin/mvn sonar:sonar"
+                        sh "${mvnHome}/bin/mvn sonar:sonar \
+                        -Dsonar.projectKey=cps048-project \
+                        -Dsonar.projectName='cps048-project" 
                     }
                 }
             }
