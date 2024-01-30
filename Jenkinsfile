@@ -33,7 +33,9 @@ pipeline {
             }
         }
         stage('Build Docker Image'){
-            sh 'docker build -t cps048:v1 .'
+            steps{
+                sh 'docker build -t cps048:v1 .'
+            }
         }
             	
 
