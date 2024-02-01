@@ -49,8 +49,8 @@ pipeline {
         stage('Nexus Image Push'){
             steps{
                 sh " echo 'admin@123' | docker login -u admin --password-stdin http://3.84.245.187:8085"
-                sh "docker tag cps048:v1  3.84.245.187:8081/cps048:v1"
-                sh 'docker push 3.84.245.187:8081/cps048:v1'
+                sh "docker tag cps048:v1  3.84.245.187:8085/cps048:v1"
+                sh 'docker push 3.84.245.187:8085/cps048:v1'
             }
    }
 
