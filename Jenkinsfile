@@ -46,6 +46,13 @@ pipeline {
                 sh 'sudo docker run -itd -p "7000:8080" --name tomcate-cps048 cps048:v1'
             }
         }
+        stage('Nexus Image Push'){
+            steps{
+                sh "docker login -u admin -p admin123 3.84.245.187:8081"
+                sh "docker tag cps048:v1  3.84.245.187:8081/cps048:v1"
+                sh 'docker push 3.84.245.187:8081/cps048:v1'
+            }
+   }
 
      }
 
